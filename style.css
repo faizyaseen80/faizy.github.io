@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap");
+body {
+  background-color: antiquewhite;
+  font-family: "Ubuntu", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  height: 65px;
+  color: #fff;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.brand img {
+  height: 40px;
+  padding: 8px;
+}
+
+.container {
+  min-height: 68vh;
+  font-family: "Varela Round", sans-serif;
+  display: flex;
+  background-color: #000;
+  color: #fff;
+  margin: 23px auto;
+  padding: 22px;
+  width: 70%;
+  border-radius: 12px;
+  background: url(bg.jpg);
+  overflow: hidden;
+}
+
+.song-list {
+  height: 68vh;
+}
+
+.songItemContainer {
+  margin-top: 34px;
+  height: 85%; 
+  overflow-y: scroll;
+}
+
+.songItemContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.bottom-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  height: 87px;
+  background-color: #000;
+  color: #fff;
+}
+
+.icones {
+  margin-top: 16px;
+}
+
+.icones i {
+  cursor: pointer;
+}
+
+#myProgressBar {
+  width: 75vw;
+}
+
+.songItem {
+  height: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 34px;
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+.songItem img {
+  width: 34px;
+  margin: 0 34px;
+  border-radius: 34px;
+}
+
+.timesTamp {
+  margin: 0 20px;
+}
+
+.timesTamp i {
+  cursor: pointer;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 12vw;
+}
+
+.songInfo img {
+  margin: 0 12px;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.songItemPlay {
+  cursor: pointer;
+}
+
+.active {
+  color: blue;
+}
+
+@media screen and (max-width: 1050px) {
+  .song-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .bottom-bar {
+    justify-content: space-around;
+    height: 145px;
+  }
+  
+}
+
+@media screen and (max-width: 576px) {
+  .songItem img {
+    display: none;
+  }
+  .songName {
+    padding-left: 12px;
+    font-size: 0.7em;
+  }
+  .songInfo {
+    left: 4vh;
+  }
+}
