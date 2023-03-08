@@ -169,4 +169,20 @@ nav ul li {
   .songInfo {
     left: 4vh;
   }
+
+  .song-list h1 {
+    font-size: 1.5em;
+  }
+  .container {
+    min-height: 53vh;
+  }
+  .song-list {
+    height: 53vh;
+  }
+  .songItemContainer {
+    margin-top: 18px;
+  }
+  .timesTamp {
+    font-size: 0.8em;
+  }
 }
