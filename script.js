@@ -135,19 +135,6 @@ masterPlay.addEventListener("click", () => {
 audioElement.addEventListener("timeupdate", () => {
   progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
   myProgressBar.value = progress;
-  console.log(progress)
-  // if (progress = 100) {
-   
-    // audioElement.src = `songs/${songIndex + 2}.mp3`;
-    // masterSongName.innerText = songs[songIndex].songName;
-    // document.getElementById(songIndex).classList.add("active")
-    // document.getElementById(songIndex - 1).classList.remove("active")
-    // audioElement.currentTime = 0;
-    // audioElement.play();
-    // masterPlay.classList.remove("fa-circle-play");
-    // masterPlay.classList.add("fa-circle-pause");
-    // }
-  // update seekbar
 });
 
 myProgressBar.addEventListener("change", () => {
@@ -156,7 +143,7 @@ myProgressBar.addEventListener("change", () => {
 
 const makeAllPlays = () => {
   songItemPlay.forEach((element) => {
-    element.classList.remove("active");
+    element.parentElement.classList.remove("active");
     gif.style.opacity = 0;
   });
 };
@@ -165,8 +152,7 @@ songItemPlay.forEach((element) => {
   element.addEventListener("click", (e) => {
     makeAllPlays();
     songIndex = parseInt(e.target.id);
-    console.log(e.target.id)
-    e.target.classList.add("active");
+    e.target.parentElement.classList.add("active");
     gif.style.opacity = 1;
     audioElement.src = `songs/${songIndex + 1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
@@ -185,8 +171,8 @@ next.addEventListener("click", () => {
   }
   audioElement.src = `songs/${songIndex + 1}.mp3`;
   masterSongName.innerText = songs[songIndex].songName;
-  document.getElementById(songIndex).classList.add("active")
-  document.getElementById(songIndex - 1).classList.remove("active")
+  document.getElementById(songIndex).parentElement.classList.add("active")
+  document.getElementById(songIndex - 1).parentElement.classList.remove("active")
   audioElement.currentTime = 0;
   audioElement.play();
   masterPlay.classList.remove("fa-circle-play");
@@ -201,8 +187,8 @@ previous.addEventListener("click", () => {
   }
   audioElement.src = `songs/${songIndex + 1}.mp3`;
   masterSongName.innerText = songs[songIndex].songName;
-  document.getElementById(songIndex).classList.add("active")
-  document.getElementById(songIndex +1).classList.remove("active")
+  document.getElementById(songIndex).parentElement.classList.add("active")
+  document.getElementById(songIndex +1).parentElement.classList.remove("active")
   audioElement.currentTime = 0;
   audioElement.play();
   masterPlay.classList.remove("fa-circle-play");
